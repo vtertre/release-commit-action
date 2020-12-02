@@ -1,13 +1,20 @@
 name: 'Release Commit Action'
-description: 'Greet someone and record the time'
+description: 'Bump version and tag commit'
+author: 'Vincent Tertre'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'tag'
+  color: 'green'
+
 inputs:
   who-to-greet:
     description: 'Who to greet'
     required: true
     default: 'World'
+
 outputs:
   time:
     description: 'The time we greeted you'
-runs:
-  using: 'node12'
-  main: 'dist/index.js'

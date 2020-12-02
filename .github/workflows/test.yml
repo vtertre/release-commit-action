@@ -1,4 +1,8 @@
-on: [push]
+name: 'Action to test the action locally with act'
+on:
+  push:
+    branches:
+    - a-fake-branch
 
 jobs:
   hello_world_job:
@@ -9,6 +13,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: "./"
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: hello
